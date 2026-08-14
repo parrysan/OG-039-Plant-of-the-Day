@@ -115,4 +115,4 @@ Single-context: `CONTEXT.md` at the repo root. See `docs/agents/domain.md`.
 
 > **Optional, ephemeral.** A 2–3 line free-form scratch pad of "where I left off" — not durable knowledge. Durable decisions belong in the vault project page. Wipe and rewrite freely.
 
-Last action: destination redrawn — list is given, display + Head Gardener are the work. Prototype at prototype/daily-page/. Next: pick a page structure on localhost:8081.
+Last action: locked copy from How Many Plants, look/IA from Kinfolk. Prototype still at localhost:8081.

@@ -48,6 +48,7 @@
   }
   .a-hero h1 { font-size: clamp(40px, 8vw, 72px); font-weight: 700; margin: 8px 0 4px; letter-spacing: -0.03em; }
   .a-hero .latin { font-size: 18px; font-weight: 400; }
+  .dek { font-size: 14px; line-height: 1.45; margin: 10px 0 0; max-width: 36em; opacity: 0.85; }
   .a-note { max-width: 640px; padding: 36px 24px 24px; }
   .a-note p { font-size: 20px; line-height: 1.45; margin: 0 0 16px; font-weight: 500; }
   .a-sign { font-size: 13px; color: var(--og-dark-gray); }
@@ -142,6 +143,13 @@ function recent(list, today) {
   return list.filter((p) => p.date !== today.date).sort((a, b) => b.date.localeCompare(a.date));
 }
 
+function identity(p) {
+  const bits = [];
+  if (p.also_known_as) bits.push(p.also_known_as);
+  if (p.origins) bits.push(p.origins);
+  return bits.length ? `<p class="dek">${bits.join(" · ")}</p>` : "";
+}
+
 function variantA(today, others, curator) {
   return `<article class="a">
     <header class="a-hero">
@@ -150,6 +158,7 @@ function variantA(today, others, curator) {
         <div class="kicker">Plant of the Day · ${fmt(today.date)}</div>
         <h1>${today.common}</h1>
         <div class="latin">${today.latin}</div>
+        ${identity(today)}
       </div>
     </header>
     <section class="a-note">
@@ -172,6 +181,7 @@ function variantB(today, others, curator) {
       <div>
         <h1>${today.common}</h1>
         <div class="latin">${today.latin}</div>
+        ${identity(today)}
         <p class="b-note">${today.note}</p>
         <div class="b-sign">${curatorLine(curator)}</div>
       </div>
@@ -190,6 +200,7 @@ function variantC(today, others, curator) {
       <div class="c-meta"><span>Plant of the Day</span><span>${fmt(today.date)}</span></div>
       <h1>${today.latin}</h1>
       <h2>${today.common}</h2>
+      ${identity(today)}
       ${plate(today)}
       <div class="c-letter">
         <p>${today.note}</p>

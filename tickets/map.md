@@ -19,6 +19,7 @@ An elegant localhost Plant of the Day page, fed by a Plant list that already exi
 - Phil, 2026-08-14: stop spending time on how the list is assembled. The list is given. The work is structure and display.
 - Head Gardener is a real person (friend, 30 years). Credit + notes on the page. Not an admin app, not a role engine.
 - Public Suggestion / Vote / Leaderboard are parked. They are not this destination.
+- Phil, 2026-08-14: copy voice from [How Many Plants — Nerve Plant](https://howmanyplants.com/plant/nerve-plant). Visual style and IA from [Kinfolk](https://www.kinfolk.com/). Do not take HMP's look, icon grid, or care-encyclopedia layout.
 
 ## Decisions so far
 
@@ -32,7 +33,7 @@ An elegant localhost Plant of the Day page, fed by a Plant list that already exi
 ## Not yet specified
 
 - **Head Gardener's name** — we have the role, not the name yet. Add it to `data/plants.json` when Phil has it.
-- **How much of the note he writes** — one signed paragraph vs a longer field note. Decide on the prototype, not in the abstract.
+- **How much of the note he writes** — locked in spirit: HMP-style About the plant, not a full care guide. Length still settles on the page.
 - **Oganiko brand relationship** — standalone vs a series on oganiko.com.
 - **UI language** — spec and prototype in English.
 

@@ -25,5 +25,9 @@ The named curator. Thirty years of gardening. Writes or stands behind the note o
 _Avoid_: moderator, suggester, editor-in-chief, CMS user
 
 **Note**:
-The short text on the Plant of the Day page, in the Head Gardener's voice.
-_Avoid_: blurb, caption, description, care sheet
+How the plant is *seen* — one short paragraph in the Head Gardener's voice. Sensory, specific, like How Many Plants' "About the plant" (Nerve Plant: "This little plant packs a punch…"). Not a care manual.
+_Avoid_: blurb, caption, care sheet, troubleshooting, icon-grid facts
+
+**Identity**:
+The few facts that sit with the name: latin, also-known-as, origin and climate. Written as lines, not as a form.
+_Avoid_: tag cloud, difficulty score, "how many green thumbs"
