@@ -93,7 +93,21 @@ Overrides: Firebase is the intended later host (continuity with OG-019/OG-021/OG
 > List any project-specific skills in `./.claude/skills/`. If none, the project uses the global library at `~/OG/shared-skills/`. Do not duplicate the global skills inventory here — see global AGENT.md §2.2.
 
 - **Project-local skills**: none — uses global library
-- **Most relevant global skills for this project**: `frontend-design`, `ods`, `oganiko-branding`, `media-gen`/`nanobanana`, `og-deploy`
+- **Most relevant global skills for this project**: `wayfinder`, `grill-me`, `domain-modeling`, `frontend-design`, `ods`, `oganiko-branding`, `media-gen`/`nanobanana`
+
+## Agent skills
+
+### Issue tracker
+
+Local markdown under `tickets/`. No GitHub Issues. External PRs are not a triage surface. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Default role strings (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`). See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: `CONTEXT.md` at the repo root. See `docs/agents/domain.md`.
 
 ---
 
@@ -101,4 +115,4 @@ Overrides: Firebase is the intended later host (continuity with OG-019/OG-021/OG
 
 > **Optional, ephemeral.** A 2–3 line free-form scratch pad of "where I left off" — not durable knowledge. Durable decisions belong in the vault project page. Wipe and rewrite freely.
 
-Last action: finished incomplete scaffold (git, GitHub, vault page, client area). Hosting stays localhost — no Firebase slot. Next: Phil elaborates the product.
+Last action: charted wayfinder map `tickets/map.md`. Destination = localhost core-app spec. Next: take the first frontier ticket (lock aftermath, suggestion shape, same-plant identity, or wait for research 0007).
