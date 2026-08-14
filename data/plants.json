@@ -37,7 +37,24 @@
         "size": "A slow house plant. It will not fill a room.",
         "toxic": "The sap can irritate. Keep it off skin and away from pets who chew.",
         "pro_tip": "If the leaves go soft, you have been kind. Stop watering."
-      }
+      },
+      "practice": {
+        "soil": "A gritty mix that dries. Ordinary potting soil holds too much water and the roots rot.",
+        "repotting": "Seldom. Move it only when the pot is packed. Spring, one size up.",
+        "feeding": "A weak feed in the warm months. Nothing in winter.",
+        "grooming": "Cut a soft or yellow leaf at the base. Do not mist the crown.",
+        "propagation": "A leaf or pup with a clean cut, left to callus, then in dry mix. Patience."
+      },
+      "questions": [
+        {
+          "q": "Why is my aloe going soft and yellow?",
+          "a": "Too much water. Aloe stores what it needs in the leaf. If the pot stays wet the roots rot and the leaf collapses. Let it dry, then water less often."
+        },
+        {
+          "q": "Why are the leaf tips on my aloe brown?",
+          "a": "Usually dry air, or a sudden blast of hot sun after a dark spell. Trim the brown tip along the leaf shape. Do not water more to compensate."
+        }
+      ]
     }
   ]
 }

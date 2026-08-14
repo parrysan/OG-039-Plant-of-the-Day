@@ -41,5 +41,13 @@ The next depth, reached by scrolling. The Note, then Identity, then the Head Gar
 _Avoid_: accordion, "read more" dump, care encyclopedia
 
 **Ledger**:
-The last depth on this page. A few labeled lines — water, light, size, toxic or not, one pro tip. Typography, not icons. Troubleshooting does not live here.
-_Avoid_: How Many Plants icon grid, Beyond the Basics, symptom/cause/solution
+A few labeled lines — water, light, size, toxic or not, one pro tip. Typography, not icons.
+_Avoid_: How Many Plants icon grid, thumbs, tags
+
+**Practice**:
+How to live with the plant — soil, repotting, feeding, grooming, propagation. Short prose under real headings, not a menu of arrows.
+_Avoid_: "Beyond the Basics" panel, icon list
+
+**Questions**:
+The problems people actually type. Each is a question heading and a 40–60 word answer. This is the AEO layer.
+_Avoid_: "Troubleshooting" as a brand label; green-thumb scores

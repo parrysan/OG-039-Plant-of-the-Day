@@ -59,6 +59,10 @@
   .ledger div { display: grid; grid-template-columns: 7rem 1fr; gap: 8px 16px; padding: 10px 0; border-top: 1px solid #e6e6e6; }
   .ledger dt { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--og-dark-gray); padding-top: 2px; }
   .ledger dd { margin: 0; font-size: 15px; line-height: 1.45; }
+  .deeper { max-width: 640px; padding: 8px 24px 24px; }
+  .deeper h2 { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin: 36px 0 12px; }
+  .deeper h3 { font-size: 18px; font-weight: 500; margin: 20px 0 6px; }
+  .deeper p { font-size: 15px; line-height: 1.5; margin: 0 0 8px; }
   .a-recent { padding: 8px 24px 80px; }
   .a-recent ul { list-style: none; padding: 0; margin: 12px 0 0; }
   .a-recent li { padding: 10px 0; border-top: 1px solid #e6e6e6; }
@@ -173,6 +177,31 @@ function ledger(p) {
   </section>`;
 }
 
+function practice(p) {
+  const P = p.practice;
+  if (!P) return "";
+  const rows = [
+    ["Soil", P.soil],
+    ["Repotting", P.repotting],
+    ["Feeding", P.feeding],
+    ["Grooming", P.grooming],
+    ["Propagation", P.propagation]
+  ].filter(([, v]) => v);
+  if (!rows.length) return "";
+  return `<section class="deeper" aria-label="Practice">
+    ${rows.map(([k, v]) => `<h3>${k}</h3><p>${v}</p>`).join("")}
+  </section>`;
+}
+
+function questions(p) {
+  const qs = p.questions || [];
+  if (!qs.length) return "";
+  return `<section class="deeper" aria-label="Questions">
+    <h2>Questions</h2>
+    ${qs.map((item) => `<h3>${item.q}</h3><p>${item.a}</p>`).join("")}
+  </section>`;
+}
+
 function variantA(today, others, curator) {
   return `<article class="a">
     <header class="a-hero">
@@ -189,6 +218,8 @@ function variantA(today, others, curator) {
       <div class="a-sign">${curatorLine(curator)}</div>
     </section>
     ${ledger(today)}
+    ${practice(today)}
+    ${questions(today)}
     <aside class="a-recent">
       <div class="kicker">Recently featured</div>
       <ul>${others.map((p) => `<li><strong>${p.common}</strong> · <span class="latin">${p.latin}</span></li>`).join("")}</ul>
@@ -212,6 +243,8 @@ function variantB(today, others, curator) {
       ${plate(today)}
     </div>
     ${ledger(today)}
+    ${practice(today)}
+    ${questions(today)}
     <aside class="b-recent">
       <div class="kicker">Recently featured</div>
       <ol>${others.map((p) => `<li><strong>${p.common}</strong><br><span class="latin">${p.latin}</span></li>`).join("")}</ol>
@@ -233,6 +266,8 @@ function variantC(today, others, curator) {
       </div>
     </div>
     ${ledger(today)}
+    ${practice(today)}
+    ${questions(today)}
     <aside class="c-recent">Recently: ${others.map((p) => p.common).join(" · ")}</aside>
   </article>`;
 }

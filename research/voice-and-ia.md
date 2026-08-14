@@ -41,5 +41,24 @@ Disclosure is **scroll**, Kinfolk-style. Not HMP accordions. Not a "Read more" t
 | 1 | **Cover** | Date, common name, latin, photo | First fold. Always the same. Always quiet. |
 | 2 | **Closer** | Note, also-known-as, origins, Head Gardener | Scroll once. Still prose. |
 | 3 | **Ledger** | Water, light, size, toxic, one pro tip — labeled lines | Scroll again. Typography, not icons. |
+| 4 | **Practice** | Soil, repot, feed, groom, propagate — short essays | Keep scrolling. H2s, no arrow menu. |
+| 5 | **Questions** | Real questions people type, 40–60 word answers | Last. FAQ in the HTML. |
 
-Nothing below 3 on this page. No troubleshooting, no soil recipes, no variants list. Those would be a later surface if we ever need them.
+The first fold never changes. Depths 4–5 exist so a crawler (and a worried owner) can find them. They are not on the Cover.
+
+## AEO / SEO (the screens Phil sent)
+
+Those How Many Plants blocks are **information types**, not a layout to copy.
+
+| Their block | Ours | Why it ranks / gets cited |
+|---|---|---|
+| Official name / also known as / origins | **Identity** (Closer) | Entity: latin + synonyms + place. Google and LLMs need this to know the plant. |
+| About the plant | **Note** (Closer) | One citable passage. Head Gardener is the expert quote. |
+| How many green thumbs? | **Drop** | Not a query. Subjective. Looks like a widget. Hurts Kinfolk. |
+| The Basics / Pro tip | **Ledger** | Direct answers to "how much water / light". Lines, not icons. |
+| Beyond the Basics | **Practice** | How-to cluster (repot, propagate). `HowTo` schema later. |
+| Troubleshooting questions | **Questions** | The AEO prize. "Why are my nerve plant leaves wilting?" = FAQPage + H2s that match the query. |
+
+**The hard SEO rule:** a URL that changes at midnight cannot rank. The **plant** has a permanent address (`/plant/aloe`). Today is a Cover of that plant. Share either the day-link (ritual) or the plant-link (the document). Same HTML depths on the plant page.
+
+In the HTML always: one `h1` (common name), Identity in the body, Note as a short paragraph, Questions as `<h2>` + answer. Schema later (`Article` + author = Head Gardener, `FAQPage`, `HowTo` on Practice). No separate "for AI" copy.
