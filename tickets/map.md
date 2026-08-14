@@ -21,6 +21,7 @@ An elegant localhost Plant of the Day page, fed by a Plant list that already exi
 - Public Suggestion / Vote / Leaderboard are parked. They are not this destination.
 - Phil, 2026-08-14: copy voice from [How Many Plants — Nerve Plant](https://howmanyplants.com/plant/nerve-plant). Visual style and IA from [Kinfolk](https://www.kinfolk.com/). Do not take HMP's look, icon grid, or care-encyclopedia layout.
 - Description is five depths, disclosed by scroll: **Cover** → **Closer** → **Ledger** → **Practice** → **Questions**. Top fold stays Kinfolk-minimal. HMP's information types (identity, about, basics, beyond, troubleshooting Qs) live in those depths. Green thumbs are out. The plant has a permanent URL; the Day is a Cover of that plant.
+- Phil, 2026-08-14: Articles can be published on the back of each Plant. A Plant is the entity; an Article is a dated story that points at it. Not a content mill. Stories sit after Questions, Kinfolk-quiet.
 
 ## Decisions so far
 

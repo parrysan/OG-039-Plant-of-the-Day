@@ -51,3 +51,11 @@ _Avoid_: "Beyond the Basics" panel, icon list
 **Questions**:
 The problems people actually type. Each is a question heading and a 40–60 word answer. This is the AEO layer.
 _Avoid_: "Troubleshooting" as a brand label; green-thumb scores
+
+**Article**:
+A dated Kinfolk story that hangs off one Plant. Written because there was something to say — a season, a dish, a failure, a walk. The Head Gardener (or Phil) signs it. It has its own URL. The Plant page lists it. The Article points back.
+_Avoid_: "10 facts about aloe", programmatic SEO posts, a separate blog with no plant
+
+**Stories**:
+The list of Articles on the back of a Plant. Quiet, like Kinfolk's "latest". Not a magazine homepage.
+_Avoid_: feed, blog index, card grid of excerpts

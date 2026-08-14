@@ -62,3 +62,13 @@ Those How Many Plants blocks are **information types**, not a layout to copy.
 **The hard SEO rule:** a URL that changes at midnight cannot rank. The **plant** has a permanent address (`/plant/aloe`). Today is a Cover of that plant. Share either the day-link (ritual) or the plant-link (the document). Same HTML depths on the plant page.
 
 In the HTML always: one `h1` (common name), Identity in the body, Note as a short paragraph, Questions as `<h2>` + answer. Schema later (`Article` + author = Head Gardener, `FAQPage`, `HowTo` on Practice). No separate "for AI" copy.
+
+## Articles on the back of a Plant
+
+The Plant page is the **front** (Cover through Questions). **Stories** are the back: dated Articles that only exist because that plant gave you something to write.
+
+- `/plant/aloe` — the entity. Depths 1–5. Then a quiet list of Stories.
+- `/stories/aloe-in-august` — one Article. Points back. Shareable on its own.
+- `/2026-08-14` — today's Cover. Points at the Plant.
+
+Do not flip a card. Do not stand up a blog. Do not generate an article per keyword. Write when he has a sentence. The cluster (plant + stories) is what search and AI can cite; the Cover is what someone sends today.
