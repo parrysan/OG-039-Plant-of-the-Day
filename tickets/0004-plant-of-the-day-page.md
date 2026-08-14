@@ -2,13 +2,13 @@
 title: "What does the Plant of the Day page contain?"
 labels: [wayfinder:prototype]
 mode: HITL
-status: open
-assignee:
-blocked_by: ["0002"]
+status: claimed
+assignee: grok
+blocked_by: []
 ---
 
 ## Question
 
-Once a Day locks, what is on the Plant of the Day page?
+What is the structure of the Plant of the Day page, given the Plant list already exists and a Head Gardener writes the Note?
 
-Name, photo, facts, who suggested it, Vote count, yesterday's plant, a way to the Leaderboard — which of these are in v1? This ticket is a prototype: raise fidelity with a cheap artifact, then decide.
+Prototype (throwaway, three structures): `prototype/daily-page/` — [http://localhost:8081](http://localhost:8081)

@@ -1,0 +1,30 @@
+{
+  "curator": {
+    "name": "",
+    "title": "Head Gardener",
+    "years": 30
+  },
+  "plants": [
+    {
+      "date": "2026-08-12",
+      "common": "Stinging nettle",
+      "latin": "Urtica dioica",
+      "note": "People call it a weed. It is a leaf vegetable that grows whether you ask it to or not. Gloves for the harvest, then it behaves.",
+      "photo": ""
+    },
+    {
+      "date": "2026-08-13",
+      "common": "Tomato",
+      "latin": "Solanum lycopersicum",
+      "note": "A fruit we treat as a vegetable. In this soil it wants heat on the wall and water at the root, not on the leaf.",
+      "photo": ""
+    },
+    {
+      "date": "2026-08-14",
+      "common": "Aloe",
+      "latin": "Aloe vera",
+      "note": "A succulent that forgives neglect and not kindness. Let the pot dry. The gel is useful; the plant is not a pharmacy.",
+      "photo": ""
+    }
+  ]
+}

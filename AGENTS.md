@@ -80,10 +80,10 @@ Overrides: Firebase is the intended later host (continuity with OG-019/OG-021/OG
 
 > Domain rules, naming conventions, "do not" lists. Anything an LLM working in this project must know that isn't true globally. If empty, write "None — global rules apply" and stop.
 
-- **Scope discipline**: this repo is the core web app (daily plant page + leaderboard) only. Merch, mailing-list send infrastructure, and the iOS app are separate future specs — do not fold them in without a new brainstorming pass.
-- **Localhost only**: no Firebase project, no hosting deploy, no cloud database until Phil confirms a slot is free. Serve and develop on localhost.
-- **No login/auth for v1**: suggestions and votes are anonymous, device-cookie scoped. Do not add a full auth provider without a new design decision.
-- **Email capture is soft-opt-in only**: capture points ("notify me if this wins", "email me tomorrow's plant") may store locally, but no sending/ESP integration exists yet — do not wire up sends without an explicit go-ahead.
+- **The Plant list is given**: Phil writes `data/plants.json`. Do not build suggestion, vote, leaderboard, or starter-set machinery unless the destination is redrawn.
+- **Display first**: the work is the Plant of the Day page structure and how the Head Gardener sits on it.
+- **Head Gardener is a person**: credit + Note. Do not build a curator CMS.
+- **Localhost only**: no Firebase project, no hosting deploy, no cloud database until Phil confirms a slot is free.
 - **Merch reuse**: when the merch phase starts, check `OG-026-01-POD-Oganiko-Shop` first before building new Printify/Shopify plumbing.
 
 ---
@@ -115,4 +115,4 @@ Single-context: `CONTEXT.md` at the repo root. See `docs/agents/domain.md`.
 
 > **Optional, ephemeral.** A 2–3 line free-form scratch pad of "where I left off" — not durable knowledge. Durable decisions belong in the vault project page. Wipe and rewrite freely.
 
-Last action: charted wayfinder map `tickets/map.md`. Destination = localhost core-app spec. Next: take the first frontier ticket (lock aftermath, suggestion shape, same-plant identity, or wait for research 0007).
+Last action: destination redrawn — list is given, display + Head Gardener are the work. Prototype at prototype/daily-page/. Next: pick a page structure on localhost:8081.

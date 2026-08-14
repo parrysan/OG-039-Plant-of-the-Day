@@ -1,6 +1,6 @@
 # Plant of the Day
 
-A daily featured plant, chosen from a public suggest-and-upvote leaderboard.
+A daily featured Plant, taken from a Plant list that already exists, shown as one page for the Day. A named Head Gardener is the voice on that page.
 
 ## Language
 
@@ -8,22 +8,22 @@ A daily featured plant, chosen from a public suggest-and-upvote leaderboard.
 Any plant — edible, wild, houseplant, ornamental, or otherwise. Garlic, nettles, tomatoes, cacti, and aloe vera all count.
 _Avoid_: countryside-only plant, garden-only plant, Polish-only plant
 
+**Plant list**:
+The existing set of Plants, written by Phil (with the Head Gardener). A file. Not a feature.
+_Avoid_: starter set, suggestion queue, catalog product, nomination pool
+
 **Plant of the Day**:
-The single plant featured for one Day — the suggestion with the most votes at lock.
+The single Plant shown for one Day, taken from the Plant list.
 _Avoid_: winner, featured listing
 
 **Day**:
-A calendar date in Europe/Warsaw, locking at 00:00.
+A calendar date in Europe/Warsaw, starting at 00:00.
 _Avoid_: UTC day, rolling 24-hour window
 
-**Suggestion**:
-A Plant proposed for the Leaderboard. Payload not yet specified.
-_Avoid_: nomination, entry, listing, submission
+**Head Gardener**:
+The named curator. Thirty years of gardening. Writes or stands behind the note on the page. A person, not an admin role.
+_Avoid_: moderator, suggester, editor-in-chief, CMS user
 
-**Vote**:
-One device's upvote for one Suggestion. A device may vote for many Plants, each only once. No downvotes, no retracts.
-_Avoid_: like, downvote, point
-
-**Leaderboard**:
-The ranked Suggestions competing to become the next Plant of the Day.
-_Avoid_: feed, gallery, contest board
+**Note**:
+The short text on the Plant of the Day page, in the Head Gardener's voice.
+_Avoid_: blurb, caption, description, care sheet
