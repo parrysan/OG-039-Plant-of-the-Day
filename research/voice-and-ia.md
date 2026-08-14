@@ -30,5 +30,16 @@ Kinfolk's shop, subscribe walls, and issue-shop grid are not our IA. The *story*
 
 ## What a Plant row is, then
 
-`common`, `latin`, `also_known_as`, `origins`, `note` (the About paragraph), optional `photo`.  
-Water and light live inside the Note if they matter. They are not a spec sheet.
+`common`, `latin`, `also_known_as`, `origins`, `note`, optional `photo`, optional `ledger`.
+
+## Three depths (locked)
+
+Disclosure is **scroll**, Kinfolk-style. Not HMP accordions. Not a "Read more" that dumps the encyclopedia.
+
+| Depth | Name | What appears | How you get there |
+|---|---|---|---|
+| 1 | **Cover** | Date, common name, latin, photo | First fold. Always the same. Always quiet. |
+| 2 | **Closer** | Note, also-known-as, origins, Head Gardener | Scroll once. Still prose. |
+| 3 | **Ledger** | Water, light, size, toxic, one pro tip — labeled lines | Scroll again. Typography, not icons. |
+
+Nothing below 3 on this page. No troubleshooting, no soil recipes, no variants list. Those would be a later surface if we ever need them.

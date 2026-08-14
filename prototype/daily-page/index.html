@@ -49,9 +49,16 @@
   .a-hero h1 { font-size: clamp(40px, 8vw, 72px); font-weight: 700; margin: 8px 0 4px; letter-spacing: -0.03em; }
   .a-hero .latin { font-size: 18px; font-weight: 400; }
   .dek { font-size: 14px; line-height: 1.45; margin: 10px 0 0; max-width: 36em; opacity: 0.85; }
-  .a-note { max-width: 640px; padding: 36px 24px 24px; }
+  .a-note { max-width: 640px; padding: 36px 24px 8px; }
   .a-note p { font-size: 20px; line-height: 1.45; margin: 0 0 16px; font-weight: 500; }
   .a-sign { font-size: 13px; color: var(--og-dark-gray); }
+  .ledger {
+    max-width: 640px; padding: 8px 24px 32px;
+  }
+  .ledger dl { margin: 28px 0 0; padding: 0; }
+  .ledger div { display: grid; grid-template-columns: 7rem 1fr; gap: 8px 16px; padding: 10px 0; border-top: 1px solid #e6e6e6; }
+  .ledger dt { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--og-dark-gray); padding-top: 2px; }
+  .ledger dd { margin: 0; font-size: 15px; line-height: 1.45; }
   .a-recent { padding: 8px 24px 80px; }
   .a-recent ul { list-style: none; padding: 0; margin: 12px 0 0; }
   .a-recent li { padding: 10px 0; border-top: 1px solid #e6e6e6; }
@@ -150,6 +157,22 @@ function identity(p) {
   return bits.length ? `<p class="dek">${bits.join(" · ")}</p>` : "";
 }
 
+function ledger(p) {
+  const L = p.ledger;
+  if (!L) return "";
+  const rows = [
+    ["Water", L.water],
+    ["Light", L.light],
+    ["Size", L.size],
+    ["Toxic", L.toxic],
+    ["Pro tip", L.pro_tip]
+  ].filter(([, v]) => v);
+  if (!rows.length) return "";
+  return `<section class="ledger" aria-label="Ledger">
+    <dl>${rows.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}</dl>
+  </section>`;
+}
+
 function variantA(today, others, curator) {
   return `<article class="a">
     <header class="a-hero">
@@ -158,13 +181,14 @@ function variantA(today, others, curator) {
         <div class="kicker">Plant of the Day · ${fmt(today.date)}</div>
         <h1>${today.common}</h1>
         <div class="latin">${today.latin}</div>
-        ${identity(today)}
       </div>
     </header>
     <section class="a-note">
       <p>${today.note}</p>
+      ${identity(today)}
       <div class="a-sign">${curatorLine(curator)}</div>
     </section>
+    ${ledger(today)}
     <aside class="a-recent">
       <div class="kicker">Recently featured</div>
       <ul>${others.map((p) => `<li><strong>${p.common}</strong> · <span class="latin">${p.latin}</span></li>`).join("")}</ul>
@@ -181,12 +205,13 @@ function variantB(today, others, curator) {
       <div>
         <h1>${today.common}</h1>
         <div class="latin">${today.latin}</div>
-        ${identity(today)}
         <p class="b-note">${today.note}</p>
+        ${identity(today)}
         <div class="b-sign">${curatorLine(curator)}</div>
       </div>
       ${plate(today)}
     </div>
+    ${ledger(today)}
     <aside class="b-recent">
       <div class="kicker">Recently featured</div>
       <ol>${others.map((p) => `<li><strong>${p.common}</strong><br><span class="latin">${p.latin}</span></li>`).join("")}</ol>
@@ -200,13 +225,14 @@ function variantC(today, others, curator) {
       <div class="c-meta"><span>Plant of the Day</span><span>${fmt(today.date)}</span></div>
       <h1>${today.latin}</h1>
       <h2>${today.common}</h2>
-      ${identity(today)}
       ${plate(today)}
       <div class="c-letter">
         <p>${today.note}</p>
+        ${identity(today)}
         <div class="c-sign">${curatorLine(curator)}</div>
       </div>
     </div>
+    ${ledger(today)}
     <aside class="c-recent">Recently: ${others.map((p) => p.common).join(" · ")}</aside>
   </article>`;
 }

@@ -30,7 +30,14 @@
       "also_known_as": "True aloe, medicinal aloe",
       "origins": "Arabian Peninsula | Arid",
       "note": "A succulent that forgives neglect and not kindness. Let the pot dry. The gel is useful; the plant is not a pharmacy, and it will rot if you treat it like a fern.",
-      "photo": ""
+      "photo": "",
+      "ledger": {
+        "water": "When the pot is dry. Not before.",
+        "light": "Bright, or a window that does not scorch.",
+        "size": "A slow house plant. It will not fill a room.",
+        "toxic": "The sap can irritate. Keep it off skin and away from pets who chew.",
+        "pro_tip": "If the leaves go soft, you have been kind. Stop watering."
+      }
     }
   ]
 }

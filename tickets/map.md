@@ -20,6 +20,7 @@ An elegant localhost Plant of the Day page, fed by a Plant list that already exi
 - Head Gardener is a real person (friend, 30 years). Credit + notes on the page. Not an admin app, not a role engine.
 - Public Suggestion / Vote / Leaderboard are parked. They are not this destination.
 - Phil, 2026-08-14: copy voice from [How Many Plants — Nerve Plant](https://howmanyplants.com/plant/nerve-plant). Visual style and IA from [Kinfolk](https://www.kinfolk.com/). Do not take HMP's look, icon grid, or care-encyclopedia layout.
+- Description is three depths, disclosed by scroll: **Cover** (name + latin + photo) → **Closer** (Note + Identity + Head Gardener) → **Ledger** (a few labeled lines). Top fold stays minimal. Troubleshooting stays off this page.
 
 ## Decisions so far
 

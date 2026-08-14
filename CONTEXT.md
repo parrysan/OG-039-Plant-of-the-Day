@@ -25,9 +25,21 @@ The named curator. Thirty years of gardening. Writes or stands behind the note o
 _Avoid_: moderator, suggester, editor-in-chief, CMS user
 
 **Note**:
-How the plant is *seen* — one short paragraph in the Head Gardener's voice. Sensory, specific, like How Many Plants' "About the plant" (Nerve Plant: "This little plant packs a punch…"). Not a care manual.
+How the plant is *seen* — one short paragraph in the Head Gardener's voice. Sensory, specific, like How Many Plants' "About the plant". Not a care manual.
 _Avoid_: blurb, caption, care sheet, troubleshooting, icon-grid facts
 
 **Identity**:
-The few facts that sit with the name: latin, also-known-as, origin and climate. Written as lines, not as a form.
+Latin, also-known-as, origin and climate. Lines, not a form.
 _Avoid_: tag cloud, difficulty score, "how many green thumbs"
+
+**Cover**:
+What you see first. Date, common name, latin, photo. Nothing else. Always elegant, always the same shape.
+_Avoid_: facts on the first fold, icons, tags
+
+**Closer**:
+The next depth, reached by scrolling. The Note, then Identity, then the Head Gardener's name.
+_Avoid_: accordion, "read more" dump, care encyclopedia
+
+**Ledger**:
+The last depth on this page. A few labeled lines — water, light, size, toxic or not, one pro tip. Typography, not icons. Troubleshooting does not live here.
+_Avoid_: How Many Plants icon grid, Beyond the Basics, symptom/cause/solution
