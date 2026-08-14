@@ -25,7 +25,7 @@ A written spec for the localhost core web app: today's Plant of the Day plus a p
 
 ## Decisions so far
 
-<!-- the index — one line per closed ticket -->
+- [Existing daily-plant products — what mechanics should we steal or avoid?](0007-existing-daily-plant-products.md) — nobody runs a public daily vote; steal featured-page recipe + midnight swap + a seeded first week; avoid quizzes, shops, and login walls.
 
 ## Not yet specified
 
