@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plant of the Day — display prototype</title>
+<link rel="stylesheet" href="assets/oganiko-tokens.css">
+<style>
+  /* PROTOTYPE — three structures for the daily page. Not production. */
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--og-white); color: var(--og-black); }
+  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  a { color: inherit; }
+  .latin { font-style: italic; }
+  .kicker {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--og-green);
+  }
+  .plate {
+    background:
+      linear-gradient(165deg, var(--og-sage) 0%, #c5d4b8 48%, #8fa37a 100%);
+    color: var(--og-black);
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+  }
+  .plate span { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; }
+
+  /* A — Magazine: photo first, type on top of it, note after */
+  .a { min-height: 100vh; }
+  .a-hero {
+    min-height: 72vh;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+  }
+  .a-hero .plate { position: absolute; inset: 0; }
+  .a-hero .copy {
+    position: relative;
+    padding: 40px 24px 48px;
+    max-width: 720px;
+    color: var(--og-white);
+    text-shadow: 0 1px 12px rgba(0,0,0,.25);
+  }
+  .a-hero h1 { font-size: clamp(40px, 8vw, 72px); font-weight: 700; margin: 8px 0 4px; letter-spacing: -0.03em; }
+  .a-hero .latin { font-size: 18px; font-weight: 400; }
+  .a-note { max-width: 640px; padding: 36px 24px 24px; }
+  .a-note p { font-size: 20px; line-height: 1.45; margin: 0 0 16px; font-weight: 500; }
+  .a-sign { font-size: 13px; color: var(--og-dark-gray); }
+  .a-recent { padding: 8px 24px 80px; }
+  .a-recent ul { list-style: none; padding: 0; margin: 12px 0 0; }
+  .a-recent li { padding: 10px 0; border-top: 1px solid #e6e6e6; }
+
+  /* B — Field notebook: note is the page; plate is the specimen on the side */
+  .b { max-width: 1080px; margin: 0 auto; padding: 32px 24px 96px; }
+  .b-head { margin-bottom: 28px; }
+  .b-grid { display: grid; gap: 40px; }
+  @media (min-width: 800px) {
+    .b-grid { grid-template-columns: 1fr 0.85fr; align-items: start; }
+  }
+  .b h1 { font-size: clamp(32px, 5vw, 48px); margin: 10px 0 4px; letter-spacing: -0.03em; }
+  .b .latin { color: var(--og-dark-gray); }
+  .b-note { font-size: 18px; line-height: 1.55; margin: 24px 0 20px; max-width: 38em; }
+  .b-sign { font-size: 13px; }
+  .b .plate { min-height: 360px; aspect-ratio: 4/5; }
+  .b-recent { margin-top: 48px; }
+  .b-recent ol { list-style: none; padding: 0; display: flex; gap: 16px; flex-wrap: wrap; }
+  .b-recent li { flex: 1 1 180px; border-top: 2px solid var(--og-green); padding-top: 8px; }
+
+  /* C — Specimen card: latin first, plate as a botanical sheet, signed letter */
+  .c { min-height: 100vh; background: #f4f1ea; padding: 40px 20px 100px; }
+  .c-sheet {
+    max-width: 560px;
+    margin: 0 auto;
+    background: var(--og-white);
+    border: 1px solid #d9d3c6;
+    padding: 36px 28px 40px;
+  }
+  .c-meta { display: flex; justify-content: space-between; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--og-dark-gray); }
+  .c h1 { font-size: 22px; font-weight: 400; font-style: italic; margin: 28px 0 4px; text-align: left; }
+  .c h2 { font-size: 28px; font-weight: 700; margin: 0 0 20px; letter-spacing: -0.02em; }
+  .c .plate { min-height: 320px; margin: 0 0 28px; }
+  .c-letter { border-top: 1px solid #d9d3c6; padding-top: 20px; }
+  .c-letter p { font-size: 16px; line-height: 1.55; margin: 0 0 20px; }
+  .c-sign { font-size: 13px; }
+  .c-recent { max-width: 560px; margin: 24px auto 0; font-size: 13px; color: var(--og-dark-gray); }
+
+  /* Switcher — obviously not the design */
+  .switcher {
+    position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%);
+    display: flex; align-items: center; gap: 10px;
+    background: var(--og-black); color: var(--og-white);
+    padding: 8px 12px; border-radius: 999px; z-index: 20;
+    font-size: 13px; box-shadow: 0 8px 24px rgba(0,0,0,.25);
+  }
+  .switcher button {
+    background: transparent; color: inherit; border: 0; cursor: pointer;
+    font-size: 16px; width: 28px; height: 28px;
+  }
+  .proto-flag {
+    position: fixed; top: 10px; right: 12px; z-index: 20;
+    font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    background: var(--og-gold); color: var(--og-black); padding: 4px 8px;
+  }
+</style>
+</head>
+<body>
+<div class="proto-flag">Prototype · not the product</div>
+<main id="root"></main>
+<nav class="switcher" aria-label="Prototype variants">
+  <button type="button" id="prev" aria-label="Previous variant">←</button>
+  <span id="label">A — Magazine</span>
+  <button type="button" id="next" aria-label="Next variant">→</button>
+</nav>
+<script>
+// Three variants of the daily page, switchable via ?variant=
+// A Magazine · B Field notebook · C Specimen sheet
+const VARIANTS = [
+  { key: "A", name: "Magazine" },
+  { key: "B", name: "Field notebook" },
+  { key: "C", name: "Specimen sheet" }
+];
+
+const curatorLine = (c) => {
+  const name = (c.name && c.name.trim()) || "Name to come";
+  return `${c.title} · ${name} · ${c.years} years`;
+};
+
+const fmt = (iso) => new Date(iso + "T12:00:00").toLocaleDateString("en-GB", {
+  weekday: "long", day: "numeric", month: "long"
+});
+
+function plate(plant) {
+  return `<div class="plate" role="img" aria-label="Placeholder plate for ${plant.common}"><span>${plant.latin}</span></div>`;
+}
+
+function recent(list, today) {
+  return list.filter((p) => p.date !== today.date).sort((a, b) => b.date.localeCompare(a.date));
+}
+
+function variantA(today, others, curator) {
+  return `<article class="a">
+    <header class="a-hero">
+      ${plate(today)}
+      <div class="copy">
+        <div class="kicker">Plant of the Day · ${fmt(today.date)}</div>
+        <h1>${today.common}</h1>
+        <div class="latin">${today.latin}</div>
+      </div>
+    </header>
+    <section class="a-note">
+      <p>${today.note}</p>
+      <div class="a-sign">${curatorLine(curator)}</div>
+    </section>
+    <aside class="a-recent">
+      <div class="kicker">Recently featured</div>
+      <ul>${others.map((p) => `<li><strong>${p.common}</strong> · <span class="latin">${p.latin}</span></li>`).join("")}</ul>
+    </aside>
+  </article>`;
+}
+
+function variantB(today, others, curator) {
+  return `<article class="b">
+    <header class="b-head">
+      <div class="kicker">Plant of the Day · ${fmt(today.date)}</div>
+    </header>
+    <div class="b-grid">
+      <div>
+        <h1>${today.common}</h1>
+        <div class="latin">${today.latin}</div>
+        <p class="b-note">${today.note}</p>
+        <div class="b-sign">${curatorLine(curator)}</div>
+      </div>
+      ${plate(today)}
+    </div>
+    <aside class="b-recent">
+      <div class="kicker">Recently featured</div>
+      <ol>${others.map((p) => `<li><strong>${p.common}</strong><br><span class="latin">${p.latin}</span></li>`).join("")}</ol>
+    </aside>
+  </article>`;
+}
+
+function variantC(today, others, curator) {
+  return `<article class="c">
+    <div class="c-sheet">
+      <div class="c-meta"><span>Plant of the Day</span><span>${fmt(today.date)}</span></div>
+      <h1>${today.latin}</h1>
+      <h2>${today.common}</h2>
+      ${plate(today)}
+      <div class="c-letter">
+        <p>${today.note}</p>
+        <div class="c-sign">${curatorLine(curator)}</div>
+      </div>
+    </div>
+    <aside class="c-recent">Recently: ${others.map((p) => p.common).join(" · ")}</aside>
+  </article>`;
+}
+
+const renderers = { A: variantA, B: variantB, C: variantC };
+
+function currentKey() {
+  const v = new URLSearchParams(location.search).get("variant") || "A";
+  return VARIANTS.some((x) => x.key === v) ? v : "A";
+}
+
+function setKey(key) {
+  const url = new URL(location.href);
+  url.searchParams.set("variant", key);
+  history.replaceState({}, "", url);
+  draw();
+}
+
+function cycle(dir) {
+  const i = VARIANTS.findIndex((x) => x.key === currentKey());
+  setKey(VARIANTS[(i + dir + VARIANTS.length) % VARIANTS.length].key);
+}
+
+let data = null;
+
+function draw() {
+  if (!data) return;
+  const key = currentKey();
+  const meta = VARIANTS.find((x) => x.key === key);
+  document.getElementById("label").textContent = `${key} — ${meta.name}`;
+  const today = data.plants.find((p) => p.date === "2026-08-14") || data.plants[data.plants.length - 1];
+  const others = recent(data.plants, today);
+  document.getElementById("root").innerHTML = renderers[key](today, others, data.curator);
+}
+
+fetch("/data/plants.json")
+  .then((r) => r.json())
+  .then((j) => { data = j; draw(); })
+  .catch(() => {
+    document.getElementById("root").innerHTML = "<p style='padding:24px'>Could not load /data/plants.json — serve the repo root.</p>";
+  });
+
+document.getElementById("prev").onclick = () => cycle(-1);
+document.getElementById("next").onclick = () => cycle(1);
+document.addEventListener("keydown", (e) => {
+  const t = e.target;
+  if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable)) return;
+  if (e.key === "ArrowLeft") cycle(-1);
+  if (e.key === "ArrowRight") cycle(1);
+});
+</script>
+</body>
+</html>

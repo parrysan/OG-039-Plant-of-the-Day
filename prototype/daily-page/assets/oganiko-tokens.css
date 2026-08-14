@@ -1,0 +1,406 @@
+/* ═══════════════════════════════════════════════════════════════
+   OGANIKO Design Tokens — CSS Custom Properties
+   Copy this file into any web project to apply OGANIKO branding.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+        /* ── Primary Colours ───────────────────────────────────────── */
+        --og-black: #000000;
+        --og-white: #FFFFFF;
+        --og-green: #109200;
+        /* brand signature */
+        --og-fresh-leaf: #34C755;
+        /* CTAs, interactive */
+        --og-gold: #EECA25;
+        /* premium, highlights */
+
+        /* ── Secondary Accents (use sparingly) ─────────────────────── */
+        --og-dark-gray: #333333;
+        --og-olive: #6B8E23;
+        --og-brown: #8B4513;
+        --og-soft-orange: #FFA07A;
+        --og-sage: #9CAF88;
+        --og-lavender: #9370DB;
+
+        /* ── Semantic Tokens ───────────────────────────────────────── */
+        --og-bg-primary: var(--og-white);
+        --og-bg-secondary: #F8F8F6;
+        --og-bg-card: var(--og-white);
+        --og-text-primary: var(--og-black);
+        --og-text-secondary: var(--og-dark-gray);
+        --og-text-muted: #777777;
+        --og-border: #E0E0E0;
+        --og-border-subtle: rgba(0, 0, 0, 0.06);
+
+        --og-accent: var(--og-green);
+        --og-cta: var(--og-fresh-leaf);
+        --og-highlight: var(--og-gold);
+        --og-highlight-text: var(--og-green);
+        /* headline phrase highlight (green, not red) */
+
+        /* ── Frosted Glass Header (translucent overlay) ────────────── */
+        --og-glass: rgba(255, 255, 255, 0.72);
+        --og-glass-dark: rgba(10, 10, 10, 0.60);
+        --og-glass-blur: blur(12px);
+
+        /* ── Selectable / Interactive Border (green ↔ black sweep) ── */
+        --og-border-thick: 2px;
+        --og-gradient-border: conic-gradient(from var(--og-angle, 0deg), var(--og-green) 0deg, var(--og-black) 120deg, var(--og-fresh-leaf) 240deg, var(--og-green) 360deg);
+        --og-focus-ring: rgba(16, 146, 0, 0.18);
+
+        /* ── Brand Accent Strip (green → gold → black) ─────────────── */
+        --og-gradient-brand: linear-gradient(90deg, var(--og-green), var(--og-gold), var(--og-black));
+
+        /* ── Typography ────────────────────────────────────────────── */
+        --og-font-primary: 'Helvetica Neue', Arial, sans-serif;
+        --og-font-fallback: Arial, sans-serif;
+
+        --og-text-xs: 0.75rem;
+        /* 12px */
+        --og-text-sm: 0.875rem;
+        /* 14px */
+        --og-text-base: 1rem;
+        /* 16px */
+        --og-text-lg: 1.125rem;
+        /* 18px */
+        --og-text-xl: 1.5rem;
+        /* 24px */
+        --og-text-2xl: 2rem;
+        /* 32px */
+        --og-text-3xl: 2.5rem;
+        /* 40px */
+        --og-text-4xl: 3rem;
+        /* 48px */
+
+        --og-leading-tight: 1.15;
+        --og-leading-snug: 1.25;
+        --og-leading-normal: 1.5;
+        --og-leading-relaxed: 1.65;
+
+        --og-weight-light: 300;
+        --og-weight-regular: 400;
+        --og-weight-medium: 500;
+        --og-weight-bold: 700;
+
+        /* ── Spacing ───────────────────────────────────────────────── */
+        --og-space-xs: 0.25rem;
+        /* 4px  */
+        --og-space-sm: 0.5rem;
+        /* 8px  */
+        --og-space-md: 1rem;
+        /* 16px */
+        --og-space-lg: 1.5rem;
+        /* 24px */
+        --og-space-xl: 2rem;
+        /* 32px */
+        --og-space-2xl: 3rem;
+        /* 48px */
+        --og-space-3xl: 4rem;
+        /* 64px */
+        --og-space-4xl: 6rem;
+        /* 96px */
+
+        /* ── Borders & Radii ───────────────────────────────────────── */
+        --og-radius-sm: 4px;
+        --og-radius-md: 8px;
+        --og-radius-lg: 12px;
+        --og-radius-xl: 16px;
+        --og-radius-full: 9999px;
+
+        /* ── Shadows ───────────────────────────────────────────────── */
+        --og-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+        --og-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+        --og-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+        /* ── Transitions ───────────────────────────────────────────── */
+        --og-transition: all 0.2s ease;
+        --og-transition-slow: all 0.4s ease;
+
+        /* ── Container ─────────────────────────────────────────────── */
+        --og-max-width: 1200px;
+}
+
+/* ── Dark Mode (OGANIKO Digital) ─────────────────────────────── */
+[data-theme="dark"],
+.og-dark {
+        --og-bg-primary: #0A0A0A;
+        --og-bg-secondary: #111111;
+        --og-bg-card: #1A1A1A;
+        --og-text-primary: #F5F5F5;
+        --og-text-secondary: #BBBBBB;
+        --og-text-muted: #888888;
+        --og-border: rgba(255, 255, 255, 0.1);
+        --og-border-subtle: rgba(255, 255, 255, 0.05);
+        --og-glass: var(--og-glass-dark);
+
+        --og-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+        --og-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+        --og-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Base Reset ──────────────────────────────────────────────── */
+.og-brand *,
+.og-brand *::before,
+.og-brand *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+}
+
+.og-brand {
+        font-family: var(--og-font-primary);
+        font-size: var(--og-text-base);
+        line-height: var(--og-leading-relaxed);
+        color: var(--og-text-primary);
+        background-color: var(--og-bg-primary);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Typography Classes ──────────────────────────────────────── */
+.og-h1 {
+        font-family: var(--og-font-primary);
+        font-size: var(--og-text-4xl);
+        font-weight: var(--og-weight-bold);
+        line-height: var(--og-leading-tight);
+        color: var(--og-text-primary);
+}
+
+.og-h2 {
+        font-family: var(--og-font-primary);
+        font-size: var(--og-text-2xl);
+        font-weight: var(--og-weight-bold);
+        line-height: var(--og-leading-snug);
+        color: var(--og-text-primary);
+}
+
+.og-h3 {
+        font-family: var(--og-font-primary);
+        font-size: var(--og-text-xl);
+        font-weight: var(--og-weight-medium);
+        line-height: var(--og-leading-snug);
+        color: var(--og-text-primary);
+}
+
+/* Lead-in: the intro paragraph directly after a headline. One step up from
+   body, Medium weight, tight to the headline above, standard gap to body below.
+   ponytail: margin-top assumes the headline carries no bottom margin; set to 0
+   where it does. */
+.og-lead {
+        font-family: var(--og-font-primary);
+        font-size: var(--og-text-lg);
+        font-weight: var(--og-weight-medium);
+        line-height: var(--og-leading-relaxed);
+        color: var(--og-text-primary);
+        margin-top: var(--og-space-sm);
+        margin-bottom: var(--og-space-lg);
+}
+
+.og-body {
+        font-family: var(--og-font-primary);
+        font-size: var(--og-text-base);
+        font-weight: var(--og-weight-regular);
+        line-height: var(--og-leading-relaxed);
+        color: var(--og-text-secondary);
+}
+
+.og-small {
+        font-family: var(--og-font-primary);
+        font-size: var(--og-text-sm);
+        font-weight: var(--og-weight-light);
+        line-height: var(--og-leading-normal);
+        color: var(--og-text-muted);
+}
+
+.og-label {
+        font-family: var(--og-font-primary);
+        font-size: var(--og-text-xs);
+        font-weight: var(--og-weight-medium);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--og-accent);
+}
+
+/* ── Button Classes ──────────────────────────────────────────── */
+.og-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--og-space-sm);
+        padding: var(--og-space-sm) var(--og-space-lg);
+        font-family: var(--og-font-primary);
+        font-size: var(--og-text-sm);
+        font-weight: var(--og-weight-medium);
+        border-radius: var(--og-radius-md);
+        border: none;
+        cursor: pointer;
+        transition: var(--og-transition);
+        text-decoration: none;
+}
+
+.og-btn-primary {
+        background: var(--og-cta);
+        color: var(--og-white);
+}
+
+.og-btn-primary:hover {
+        filter: brightness(1.1);
+        transform: translateY(-1px);
+}
+
+.og-btn-outline {
+        background: transparent;
+        color: var(--og-cta);
+        border: 1px solid var(--og-cta);
+}
+
+.og-btn-outline:hover {
+        background: var(--og-cta);
+        color: var(--og-white);
+}
+
+.og-btn-gold {
+        background: var(--og-gold);
+        color: var(--og-black);
+}
+
+.og-btn-gold:hover {
+        filter: brightness(1.1);
+        transform: translateY(-1px);
+}
+
+/* ── Card Classes ────────────────────────────────────────────── */
+.og-card {
+        background: var(--og-bg-card);
+        border: 1px solid var(--og-border-subtle);
+        border-radius: var(--og-radius-lg);
+        padding: var(--og-space-lg);
+        box-shadow: var(--og-shadow-sm);
+        transition: var(--og-transition);
+}
+
+.og-card:hover {
+        box-shadow: var(--og-shadow-md);
+        transform: translateY(-2px);
+}
+
+/* ── Container ───────────────────────────────────────────────── */
+.og-container {
+        width: 100%;
+        max-width: var(--og-max-width);
+        margin: 0 auto;
+        padding: 0 var(--og-space-lg);
+}
+
+/* ── Utility Classes ─────────────────────────────────────────── */
+.og-text-green {
+        color: var(--og-green);
+}
+
+.og-text-leaf {
+        color: var(--og-fresh-leaf);
+}
+
+.og-text-gold {
+        color: var(--og-gold);
+}
+
+.og-text-muted {
+        color: var(--og-text-muted);
+}
+
+.og-bg-green {
+        background-color: var(--og-green);
+}
+
+.og-bg-leaf {
+        background-color: var(--og-fresh-leaf);
+}
+
+.og-bg-gold {
+        background-color: var(--og-gold);
+}
+
+.og-bg-sage {
+        background-color: var(--og-sage);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Inspiration-adapted patterns (sourced via adapt-from-URL mode)
+   ─────────────────────────────────────────────────────────────── */
+
+/* ── Glass Header (os-005) — translucent blurred overlay nav ──── */
+.og-header-glass {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: var(--og-glass);
+        backdrop-filter: var(--og-glass-blur) saturate(140%);
+        -webkit-backdrop-filter: var(--og-glass-blur) saturate(140%);
+        border-bottom: 1px solid var(--og-border-subtle);
+}
+
+/* ── Highlighted Headline (os-006) — green emphasis phrase ────── */
+.og-highlight {
+        color: var(--og-highlight-text);
+}
+
+.og-highlight-marker {
+        background: linear-gradient(transparent 62%, rgba(52, 199, 85, 0.40) 62%);
+        padding: 0 0.05em;
+        border-radius: 2px;
+}
+
+.og-highlight-underline {
+        background-image: linear-gradient(var(--og-green), var(--og-green));
+        background-repeat: no-repeat;
+        background-position: 0 100%;
+        background-size: 100% 0.14em;
+        padding-bottom: 0.04em;
+}
+
+/* ── Interactive Card (os-007) — animated green↔black border ──── */
+@property --og-angle {
+        syntax: '<angle>';
+        initial-value: 0deg;
+        inherits: false;
+}
+
+.og-selectable {
+        --og-angle: 0deg;
+        position: relative;
+        border: var(--og-border-thick) solid transparent;
+        border-radius: var(--og-radius-lg);
+        background:
+                linear-gradient(var(--og-bg-card), var(--og-bg-card)) padding-box,
+                linear-gradient(var(--og-border), var(--og-border)) border-box;
+        cursor: pointer;
+        transition: box-shadow 0.25s ease, transform 0.2s ease;
+        outline: none;
+}
+
+.og-selectable:hover,
+.og-selectable:focus-visible {
+        background:
+                linear-gradient(var(--og-bg-card), var(--og-bg-card)) padding-box,
+                var(--og-gradient-border) border-box;
+        box-shadow: 0 0 0 4px var(--og-focus-ring);
+        transform: translateY(-2px);
+        animation: og-border-spin 4s linear infinite;
+}
+
+.og-selectable.is-selected {
+        background:
+                linear-gradient(var(--og-bg-card), var(--og-bg-card)) padding-box,
+                var(--og-gradient-border) border-box;
+        box-shadow: 0 0 0 4px var(--og-focus-ring);
+}
+
+@keyframes og-border-spin {
+        to { --og-angle: 360deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+        .og-selectable:hover,
+        .og-selectable:focus-visible { animation: none; }
+}
