@@ -33,6 +33,16 @@ Before calling work done:
 - Do not write a second “for AI” version of the same copy.
 - Articles only exist if there was something to say. Empty Stories is fine.
 
+## Triage
+
+When reviewing a diff, sort findings:
+
+- **Must fix** — Cover is no longer minimal, a depth is missing, or the page is broken
+- **Should fix** — voice, spacing, or copy drift
+- **Okay to ship** — later polish
+
+Do not mark done with an open must-fix.
+
 ## Preview
 
 - Open `http://localhost:8081/prototype/daily-page/`
