@@ -13,6 +13,7 @@ created: "2026-08-12"
 > 3. `Open-Memory-Vault/AGENTS.md` — vault operating contract (read **only** if you will write to the vault during this session).
 > 4. `Open-Memory-Vault/projects/OG-039-Plant-of-the-Day/README.md` — durable project page (status, decisions, recent activity, vault-side context).
 > 5. **This file (`AGENTS.md`)** — project-specific overrides and live operational references (below). `CLAUDE.md` in this folder is a one-line `@AGENTS.md` shim so Claude Code loads it too.
+> 6. **Workspace (Greg / AI-employee):** `context/working-style.md` → `roadmap.md` → `review.md` → `spec/product.md`. Then `CONTEXT.md` if a name is in doubt.
 >
 > **The project's `AGENTS.md` is a bootstrap manifest, not a knowledge dump.** It points at everything else. Durable knowledge lives in the vault project page. Do not duplicate.
 
@@ -27,10 +28,10 @@ created: "2026-08-12"
 - **Status**: `active`
 - **Priority**: `medium`
 - **Revenue lane**: `2-pod`
-- **Autonomy mode**: `autopilot` — daily leaderboard rotation (pick winner, generate content, publish, archive) runs end-to-end via cron; Phil reviews at checkpoints and curates domain/launch/merch decisions. See master prompt.
-- **Purpose** (one sentence): Publish a new "Plant of the Day" each day, chosen automatically from a public suggest-and-upvote leaderboard — core web app first, with print-on-demand merch, a mailing list, and an iOS app as later phases.
+- **Autonomy mode**: `co-pilot` — Phil / Head Gardener write the plant list; the agent builds the page. A daily publish cron is later.
+- **Purpose** (one sentence): One plant a day as a Kinfolk page in a How Many Plants voice, signed by a named Head Gardener. Permanent plant URL; Day is the Cover.
 - **Client dashboard**: `docs/client-area/` — localhost only (see Live references)
-- **Last touched**: `2026-08-14`
+- **Last touched**: `2026-08-18`
 
 ---
 
@@ -39,9 +40,11 @@ created: "2026-08-12"
 | Resource | Location |
 |---|---|
 | **Code root** | this folder (`dev/OG-039-Plant-of-the-Day/`) |
+| **Workspace** | `roadmap.md`, `review.md`, `context/`, `customers/`, `spec/`, `demo/`, `routines/`, `app/` |
+| **Working style** | `context/working-style.md` (Greg’s CLAUDE.md job — do not dump that into `CLAUDE.md`) |
 | **Project docs** | `./docs/` |
 | **Client area** | `./docs/client-area/` (Overview + Research seeded; Client Area style) |
-| **Design spec** | not written yet — do not invent a path |
+| **Product spec** | `spec/product.md` + glossary `CONTEXT.md` |
 | **Vault project page** | `Open-Memory-Vault/projects/OG-039-Plant-of-the-Day/README.md` |
 | **GitHub repo** | https://github.com/parrysan/OG-039-Plant-of-the-Day |
 | **Research store** | [OG-Research/OG-039-Plant-of-the-Day](https://drive.google.com/drive/folders/1Da8uc3XUc_-rfUqMucxAz0kCxkcwBM3_) (`research/`, `assets/`, `deliverables/`) |
@@ -55,7 +58,7 @@ created: "2026-08-12"
 
 - **Production URL**: none — no cloud host. Local only until a Firebase slot is free
 - **Local client area**: http://localhost:8080 (from `docs/client-area/`)
-- **Local app**: not built yet
+- **Local app**: http://localhost:8081/prototype/daily-page/ (serve from repo root)
 - **Staging / preview URL**: none
 - **Platform handle / project ID**: none — do **not** create a Firebase project (no slot available)
 - **Other identifiers**: none yet
@@ -115,4 +118,4 @@ Single-context: `CONTEXT.md` at the repo root. See `docs/agents/domain.md`.
 
 > **Optional, ephemeral.** A 2–3 line free-form scratch pad of "where I left off" — not durable knowledge. Durable decisions belong in the vault project page. Wipe and rewrite freely.
 
-Last action: locked copy from How Many Plants, look/IA from Kinfolk. Prototype still at localhost:8081.
+Workspace from Greg Isenberg video is live. Next: one small visible improvement on the daily page (plan first), then preview at :8081.
