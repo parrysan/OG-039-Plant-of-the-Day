@@ -1,0 +1,6 @@
+{
+  "decision": "open",
+  "implemented": ["casual_observer", "production_grower", "ecological_manager"],
+  "diagram_shows": ["casual_observer", "production_grower"],
+  "note": "The written spec names three reader layers. The diagram draws two. This app keeps all three because the task requires the three layers. Phil has not said whether the diagram should gain the third."
+}

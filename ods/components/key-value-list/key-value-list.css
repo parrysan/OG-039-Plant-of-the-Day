@@ -1,0 +1,124 @@
+/* ds:key-value-list v0.1
+   ============================================================
+   Oganiko Key-value list — og-kv
+   Canonical component · OS-000 Key-value list
+   Source of truth: components/key-value-list/key-value-list.css
+   ------------------------------------------------------------
+   A description list of label / value pairs: product specs,
+   order details, dish facts, report metadata. Grey labels,
+   near-black values, optional helper line under a value.
+   Layouts: inline (default, label column + value) and stacked
+   (label above value). Modifiers: divided (hairline between rows)
+   and bordered (card edge, implies divided). Inline falls back to
+   stacked under 30em. No hover, no motion, no green.
+   Content model assimilated from Key-value list by corr
+   (ui.corr.sh, 21st.dev, MIT licence).
+   Unlayered, like order-summary, so a page reset cannot wipe it.
+   version: 0.1.0 (2026-10-20) · maturity: experimental
+   ============================================================ */
+
+.og-kv {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  inline-size: 100%;
+  margin: var(--spacing-0);
+  padding: var(--spacing-0);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-snug);
+}
+
+.og-kv__row {
+  display: grid;
+  grid-template-columns: minmax(7rem, 32%) minmax(0, 1fr);
+  align-items: baseline;
+  gap: var(--spacing-1) var(--spacing-4);
+}
+
+.og-kv__label {
+  margin: var(--spacing-0);
+  color: var(--color-text-secondary);
+  font-weight: var(--weight-regular);
+  overflow-wrap: anywhere;
+}
+
+.og-kv__value {
+  margin: var(--spacing-0);
+  min-inline-size: 0;
+  color: var(--color-text);
+  font-weight: var(--weight-medium);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.og-kv__value > .ods-status {
+  vertical-align: middle;
+}
+
+.og-kv__hint {
+  display: block;
+  margin-block-start: var(--spacing-1);
+  color: var(--color-text-secondary);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+}
+
+.og-kv__value a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.og-kv__value a:focus-visible {
+  outline: var(--focus-width) solid var(--color-focus-ring);
+  outline-offset: var(--spacing-0);
+}
+
+/* Stacked: label above value. */
+.og-kv--stacked .og-kv__row {
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--spacing-1);
+}
+
+/* Divided: a hairline between rows. */
+.og-kv--divided {
+  gap: var(--spacing-0);
+}
+
+.og-kv--divided .og-kv__row {
+  padding-block: var(--spacing-3);
+  border-block-start: var(--border-width) solid var(--color-border);
+}
+
+.og-kv--divided .og-kv__row:first-child {
+  border-block-start: none;
+}
+
+/* Bordered: a quiet card edge around a divided list. */
+.og-kv--bordered {
+  gap: var(--spacing-0);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+}
+
+.og-kv--bordered .og-kv__row {
+  padding: var(--spacing-3) var(--spacing-4);
+  border-block-start: var(--border-width) solid var(--color-border);
+}
+
+.og-kv--bordered .og-kv__row:first-child {
+  border-block-start: none;
+}
+
+/* Phones: inline becomes stacked so long values never squeeze. */
+@media (max-width: 30em) {
+  .og-kv__row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--spacing-1);
+  }
+}

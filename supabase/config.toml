@@ -1,0 +1,22 @@
+# Local Supabase stack. `supabase start` needs Docker.
+# Without Docker, use scripts/apply-migrations.sh against stock Postgres.
+project_id = "og-039-plant-of-the-day"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+major_version = 15
+
+[db.seed]
+enabled = true
+sql_paths = ["./seed.sql"]
+
+[studio]
+enabled = true
+port = 54323

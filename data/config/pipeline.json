@@ -1,0 +1,15 @@
+{
+  "decision": "open",
+  "selected": null,
+  "note": "The spec says both that the pipeline replaces n8n and that it integrates with n8n. Phil has not chosen. Do not pick one in code.",
+  "options": [
+    {
+      "id": "replaces_n8n",
+      "source": "Executive summary: local-first agentic orchestration replacing n8n"
+    },
+    {
+      "id": "integrates_with_n8n",
+      "source": "Purpose: the schema integrates with n8n and Nano Banana"
+    }
+  ]
+}

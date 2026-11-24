@@ -1,0 +1,33 @@
+{
+  "target_engine": "nano_banana",
+  "asset_type": "botanical_cross_section",
+  "pod_ready": true,
+  "active_template": null,
+  "decision": "open",
+  "note": "Phil has not chosen a template. Both stay in this file. The pipeline must not pick one.",
+  "prompt_formula": {
+    "subject": "{common_name} ({genus} {species} {cultivar})",
+    "style": "botanical cross-section anatomical diagram",
+    "composition": "split-view horizon showing above-ground growth and subterranean root architecture with a soil profile",
+    "rendering": "clean educational, visible internal textures, Swiss minimal"
+  },
+  "templates": {
+    "with_flowers": {
+      "id": "with_flowers",
+      "includes_flowers": true,
+      "source": "Spec prose template",
+      "template": "Create a detailed botanical cross-section diagram of a {common_name} ({botanical_name}), showing a split view of the above-ground stem, leaves, and flowers alongside the underground root system, clean educational style, visible internal textures, minimalist Swiss grid composition."
+    },
+    "foliage_only": {
+      "id": "foliage_only",
+      "includes_flowers": false,
+      "source": "Spec agent_instructions JSON template",
+      "template": "Create a detailed botanical cross-section diagram of a {common_name} ({botanical_name}), showing a split view of the above-ground stem and leaves alongside the underground root system, clean educational style, visible internal textures."
+    }
+  },
+  "output_constraints": {
+    "aspect_ratios": ["1:1", "3:4"],
+    "min_resolution_dpi": 300,
+    "color_profile": "sRGB"
+  }
+}

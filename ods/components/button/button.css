@@ -1,0 +1,167 @@
+/* ds:button v2.5
+   Canonical component · OS-000 Button
+   Source of truth: components/button/button.css
+   version: 2.5.0 (2026-10-17) · maturity: experimental
+   This snapshot keeps the button contract this app uses (sizes, Important,
+   Filled, Outlined, press scale). The unused social-network colour block
+   from the upstream file is not copied. */
+
+.ods-button {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  max-inline-size: 100%;
+  min-inline-size: var(--spacing-0);
+  min-block-size: var(--control-height-md);
+  padding-block: var(--spacing-0);
+  padding-inline: var(--spacing-5);
+  border: var(--border-width) solid var(--color-clear);
+  border-radius: 0;
+  box-shadow: none;
+  background: var(--color-cta);
+  color: var(--color-on-cta);
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-snug);
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  transform-origin: center;
+  transition:
+    background-color var(--duration-hover),
+    color var(--duration-hover),
+    border-color var(--duration-hover);
+}
+
+.ods-button--block { inline-size: 100%; }
+
+.ods-button--m,
+.ods-button--md,
+.ods-button[data-size="m"],
+.ods-button[data-size="md"] {
+  min-block-size: var(--control-height-md);
+  padding-inline: var(--spacing-5);
+  font-size: var(--text-sm);
+}
+
+.ods-button--s,
+.ods-button--sm,
+.ods-button[data-size="s"],
+.ods-button[data-size="sm"] {
+  min-block-size: var(--control-height-sm);
+  padding-inline: var(--spacing-3);
+  font-size: var(--text-sm);
+}
+
+.ods-button--l,
+.ods-button--lg,
+.ods-button[data-size="l"],
+.ods-button[data-size="lg"] {
+  min-block-size: var(--control-height-lg);
+  padding-inline: var(--spacing-8);
+  font-size: var(--text-base);
+}
+
+.ods-button--important,
+.ods-button--primary,
+.ods-button[data-variant="important"],
+.ods-button[data-variant="primary"] {
+  background: var(--color-cta-strong);
+  color: var(--color-on-cta);
+  border-color: var(--color-clear);
+}
+
+.ods-button--filled,
+.ods-button[data-variant="filled"] {
+  background: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+.ods-button--outlined,
+.ods-button--secondary,
+.ods-button--tertiary,
+.ods-button--ghost,
+.ods-button[data-variant="outlined"],
+.ods-button[data-variant="secondary"],
+.ods-button[data-variant="tertiary"],
+.ods-button[data-variant="ghost"] {
+  background: var(--color-white);
+  color: var(--color-black);
+  border-color: var(--color-black);
+}
+
+.ods-button:enabled:hover,
+.ods-button--important:enabled:hover,
+.ods-button--primary:enabled:hover,
+.ods-button--outlined:enabled:hover,
+.ods-button--secondary:enabled:hover,
+.ods-button--ghost:enabled:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+.ods-button:enabled:active,
+.ods-button--important:enabled:active,
+.ods-button--primary:enabled:active {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border-color: var(--color-black);
+}
+
+.ods-button--outlined:enabled:active,
+.ods-button--secondary:enabled:active,
+.ods-button--ghost:enabled:active {
+  background-color: var(--color-cta);
+  color: var(--color-on-cta);
+  border-color: var(--color-clear);
+}
+
+.ods-button:disabled,
+.ods-button--important:disabled {
+  background-color: var(--color-gray-300);
+  color: var(--color-white);
+  border-color: var(--color-gray-300);
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.ods-button--outlined:disabled,
+.ods-button--secondary:disabled,
+.ods-button--ghost:disabled {
+  background-color: var(--color-white);
+  color: var(--color-text-muted);
+  border-color: var(--color-text-muted);
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.ods-button:focus-visible {
+  outline: var(--focus-width) solid var(--color-focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ods-button:not(:disabled):not(.ods-button--block):not(.ods-button--l):not(.ods-button--lg):not([data-size="l"]):not([data-size="lg"]) {
+    transition-property: background-color, color, border-color, transform;
+    transition-duration: var(--duration-hover), var(--duration-hover), var(--duration-hover), var(--duration-fast);
+    transition-timing-function: var(--ease-standard), var(--ease-standard), var(--ease-standard), var(--ease-enter);
+  }
+  .ods-button:not(:disabled):not(.ods-button--block):not(.ods-button--l):not(.ods-button--lg):not([data-size="l"]):not([data-size="lg"]):active {
+    transform: scale(0.97);
+    transition-duration: var(--duration-hover), var(--duration-hover), var(--duration-hover), var(--duration-instant);
+    transition-timing-function: var(--ease-standard), var(--ease-standard), var(--ease-standard), var(--ease-exit);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ods-button { transition: none; }
+  .ods-button:active { transform: none; }
+}
