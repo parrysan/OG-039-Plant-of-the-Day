@@ -1,0 +1,109 @@
+/* ds:alert v0.2
+   ============================================================
+   Oganiko Alert — og-alert
+   Canonical component · OS-000 Alert (inline message)
+   Source of truth: components/alert/alert.css
+   ------------------------------------------------------------
+   A message that sits in the page: something went wrong, worked,
+   or needs attention. Tones neutral / info / success / warning /
+   error use the existing ODS status tokens (--color-<tone>-bg,
+   -text, -border): a muted wash, near-black text and a 4px tone
+   bar on the start edge. Icons are Material Symbols in the text
+   colour, so meaning never rests on colour alone. Optional ODS
+   buttons for actions and an optional close button.
+   Content model assimilated from Alert by Sean Hello (ReUI,
+   21st.dev, MIT licence). Supersedes the uncommitted 0.1 draft of
+   2026-09-27 (never on a branch or PR).
+   Unlayered, like key-value-list.
+   version: 0.2.0 (2026-10-21) · maturity: experimental
+   ============================================================ */
+
+.og-alert {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: var(--spacing-3);
+  inline-size: 100%;
+  padding: var(--spacing-4);
+  border: var(--border-width) solid var(--color-border);
+  border-inline-start: calc(var(--border-width) * 4) solid var(--color-text);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  line-height: var(--leading-snug);
+}
+
+.og-alert--info { border-inline-start-color: var(--color-info-border); background: var(--color-info-bg); color: var(--color-info-text); }
+.og-alert--success { border-inline-start-color: var(--color-success-border); background: var(--color-success-bg); color: var(--color-success-text); }
+.og-alert--warning { border-inline-start-color: var(--color-warning-border); background: var(--color-warning-bg); color: var(--color-warning-text); }
+.og-alert--error { border-inline-start-color: var(--color-error); background: var(--color-bg-muted); color: var(--color-text); }
+
+.og-alert__icon {
+  display: inline-flex;
+  color: inherit;
+}
+
+.og-alert__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  min-inline-size: 0;
+}
+
+.og-alert__title {
+  margin: var(--spacing-0);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+}
+
+.og-alert__description {
+  margin: var(--spacing-0);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+}
+
+.og-alert__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+  margin-block-start: var(--spacing-2);
+}
+
+.og-alert__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--control-height-sm);
+  block-size: var(--control-height-sm);
+  margin: calc(var(--spacing-1) * -1) calc(var(--spacing-1) * -1) var(--spacing-0) var(--spacing-0);
+  padding: var(--spacing-0);
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.og-alert__close:hover {
+  background: var(--color-bg);
+  border-color: var(--color-border);
+}
+
+.og-alert__close:focus-visible {
+  outline: var(--focus-width) solid var(--color-focus-ring);
+  outline-offset: var(--spacing-0);
+}
+
+/* No icon: two columns. */
+.og-alert--no-icon {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .og-alert__close { transition: none; }
+}

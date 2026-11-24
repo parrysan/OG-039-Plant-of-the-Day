@@ -54,3 +54,7 @@ yarn-error.log*
 # Coverage
 coverage/
 .nyc_output/
+
+# Local tooling
+.playwright-mcp/
+tsconfig.tsbuildinfo

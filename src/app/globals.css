@@ -1,0 +1,71 @@
+@import "../../ods/tokens/oganiko.css";
+@import "../../ods/styles/primitives.css";
+@import "../../ods/components/button/button.css";
+@import "../../ods/components/accordion/accordion.css";
+@import "../../ods/components/key-value-list/key-value-list.css";
+@import "../../ods/components/status-pill/status-pill.css";
+@import "../../ods/components/alert/alert.css";
+@import "../../ods/components/icon/icon.css";
+@import "../../ods/components/logo/logo.css";
+@import "../../ods/components/site-header/site-header.css";
+
+html,
+body {
+  margin: 0;
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
+  text-align: start;
+}
+
+:where(h1, h2, h3, p, figcaption) {
+  text-align: start;
+}
+
+.latin {
+  font-style: italic;
+}
+
+.plant-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-4);
+}
+
+.tier-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--spacing-4);
+}
+
+/* App-level 3:4 plate. Left aligned. Not an ODS restyle. */
+.plant-plate {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: var(--spacing-2);
+  margin: 0;
+  inline-size: min(100%, 18rem);
+  aspect-ratio: 3 / 4;
+  padding: var(--spacing-4);
+  background: var(--color-bg-muted);
+}
+
+.plant-plate p,
+.plant-plate figcaption {
+  margin: 0;
+}
+
+/* Open accordion: subtle grey. ODS on main only greys the hover. */
+@layer ods.compositions {
+  .ods-accordion-item[data-open],
+  .ods-accordion-item[open] {
+    background: var(--color-bg-muted);
+  }
+}

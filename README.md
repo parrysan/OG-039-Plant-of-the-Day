@@ -1,5 +1,26 @@
 # OG-039-Plant-of-the-Day
 
+## Run the plant record
+
+```bash
+npm install
+npm run dev
+```
+
+Open http://localhost:3000/plant/urtica-dioica . The access control is a form on the page (Public, Member, Expert). It changes which reader layer is filled in. The database is optional for that page: the same three seed plants are in `data/seed/plants.json`.
+
+Apply the SQL to a local Postgres (no Docker):
+
+```bash
+npm run db:apply
+```
+
+That runs `supabase/migrations/*.sql`, writes `supabase/seed.sql` from the JSON, and checks the row-level gates. With Docker, `supabase start` in this repo uses `supabase/config.toml` and the same seed. Point a pipeline at it with `SUPABASE_URL` and `SUPABASE_ANON_KEY`. Reads go through the `plants_for_reader` view. The anon key is the public tier. `access_tier` and `avatar_role` are JWT claims. See `src/lib/supabase/sdk.ts`.
+
+The static prototype is still `prototype/daily-page/`. Serve the repo root with `python3 -m http.server 8081` if you want that page.
+
+Checks: `npm test`, `npm run lint`, `npm run typecheck`, `npm run build`.
+
 > Publish a new "Plant of the Day" each day, chosen automatically from a public suggest-and-upvote leaderboard — core web app first, with print-on-demand merch, a mailing list, and an iOS app as later phases.
 
 ## Where to start

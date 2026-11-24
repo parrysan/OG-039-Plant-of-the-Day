@@ -1,0 +1,119 @@
+/* ds:close-button v0.1 — copied from OS-000 2026-10-14
+   ============================================================
+   Oganiko Close button — ods-close-button
+   Canonical component · OS-000 close-button
+   Source of truth: components/close-button/close-button.css
+   ------------------------------------------------------------
+   At rest, a thin Material Symbols close glyph. On hover, a
+   soft circular disc fades in behind it. The X colour does
+   not change. The disc is the one sanctioned circle.
+   Token names only. Do not invent token values.
+   version: 0.1.0 (2026-10-14) · maturity: experimental
+   ------------------------------------------------------------
+   Markup:
+     <button type="button" class="ods-close-button" aria-label="Close">
+       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+         <path fill="currentColor" d="M6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5l5.6 5.6L17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6z"/>
+       </svg>
+     </button>
+   Sizes: data-size="sm" | "md" | "lg" (md is the default).
+   On a dark surface: data-surface="on-dark".
+   ============================================================ */
+
+.ods-close-button {
+  --ods-close-button-size: var(--control-height-md);
+  --ods-close-button-icon-size: var(--spacing-5);
+  --ods-close-button-color: var(--color-text-muted);
+  --ods-close-button-hover-bg: var(--color-ink-wash);
+  --ods-close-button-active-bg: var(--color-ink-press);
+  --ods-close-button-focus-ring: var(--color-focus-ring);
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  box-sizing: border-box;
+  inline-size: var(--ods-close-button-size);
+  block-size: var(--ods-close-button-size);
+  min-inline-size: var(--ods-close-button-size);
+  min-block-size: var(--ods-close-button-size);
+  margin: var(--spacing-0);
+  padding: var(--spacing-0);
+  border: none;
+  border-radius: var(--radius-full);
+  appearance: none;
+  background: transparent;
+  color: var(--ods-close-button-color);
+  font-family: var(--font-primary);
+  cursor: pointer;
+}
+
+.ods-close-button[data-size="sm"] {
+  --ods-close-button-size: var(--control-height-sm);
+  --ods-close-button-icon-size: var(--spacing-4);
+}
+
+.ods-close-button[data-size="lg"] {
+  --ods-close-button-size: var(--control-height-lg);
+  --ods-close-button-icon-size: var(--spacing-6);
+}
+
+.ods-close-button[data-surface="on-dark"] {
+  --ods-close-button-color: var(--color-text-inverse);
+  --ods-close-button-hover-bg: var(--color-ink-wash-inverse);
+  --ods-close-button-active-bg: var(--color-ink-press-inverse);
+  --ods-close-button-focus-ring: var(--color-text-inverse);
+}
+
+.ods-close-button::before {
+  content: "";
+  position: absolute;
+  inset: var(--spacing-0);
+  border-radius: var(--radius-full);
+  background-color: var(--ods-close-button-hover-bg);
+  opacity: var(--opacity-0);
+  transition: opacity var(--duration-fast) var(--ease-standard);
+  pointer-events: none;
+}
+
+.ods-close-button:hover::before,
+.ods-close-button:focus-visible::before {
+  opacity: var(--opacity-visible);
+}
+
+.ods-close-button:active::before {
+  background-color: var(--ods-close-button-active-bg);
+  opacity: var(--opacity-visible);
+}
+
+.ods-close-button:focus-visible {
+  outline: var(--focus-width) solid var(--ods-close-button-focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+.ods-close-button:disabled,
+.ods-close-button[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: var(--opacity-disabled);
+}
+
+.ods-close-button:disabled::before,
+.ods-close-button:disabled:hover::before,
+.ods-close-button:disabled:active::before,
+.ods-close-button[aria-disabled="true"]::before,
+.ods-close-button[aria-disabled="true"]:hover::before,
+.ods-close-button[aria-disabled="true"]:active::before {
+  opacity: var(--opacity-0);
+}
+
+.ods-close-button svg {
+  position: relative;
+  display: block;
+  inline-size: var(--ods-close-button-icon-size);
+  block-size: var(--ods-close-button-icon-size);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ods-close-button::before {
+    transition: none;
+  }
+}

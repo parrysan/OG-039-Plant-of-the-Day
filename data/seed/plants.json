@@ -1,0 +1,161 @@
+{
+  "notice": "Original prose for this repo. Botanical names are standard nomenclature. Nothing here is copied from the RHS Plant Finder. The cultivar Seedlantern is fictional.",
+  "plants": [
+    {
+      "id": "11111111-1111-4111-8111-111111111111",
+      "slug": "urtica-dioica",
+      "genus": "Urtica",
+      "species": "dioica",
+      "infraspecific_rank": null,
+      "infraspecific_epithet": null,
+      "cultivar": null,
+      "authority": "L.",
+      "family": "Urticaceae",
+      "alternative_names": ["Stinging nettle", "Common nettle"],
+      "origin": "Europe, Asia, and north Africa",
+      "habitat": "Damp disturbed ground and nitrogen-rich soil",
+      "hardiness_zone": "3-10",
+      "hardiness_rhs": "H6",
+      "metadata": {
+        "avatars": {
+          "casual_observer": {
+            "care": "Wear gloves. Cut the young tops. Cook them. The sting does not survive the pot.",
+            "visual_traits": "Upright stems and toothed leaves, a dull green. The hairs are what sting.",
+            "pet_toxicity": "The fresh plant stings skin. Do not let a pet chew it.",
+            "trivia": "It turns up where the ground is rich, whether you planted it or not."
+          },
+          "production_grower": {
+            "ec": "1.6 to 2.2 mS/cm in a pot. In soil, feed less.",
+            "ph": "6.0 to 7.0",
+            "dli": "12 to 20 mol per square metre per day. It wants sun.",
+            "propagation": "Seed, or a piece of root. It spreads once it is in.",
+            "harvest": "Cut tops before the plant flowers. It grows back."
+          },
+          "ecological_manager": {
+            "habitat_restoration": "Leave a patch on bare, rich ground. It holds the soil while other plants arrive.",
+            "pollinators": "The small flowers feed insects. Several butterfly larvae eat the leaves.",
+            "biodiversity_score": 74
+          }
+        },
+        "pod": {
+          "positioning": "kitchen wall canvas",
+          "dimensions_mm": { "1:1": [300, 300], "3:4": [300, 400] },
+          "print_ready": true
+        },
+        "agent_instructions": {
+          "media_generation": {
+            "target_engine": "nano_banana",
+            "recipe_ref": "data/config/nano-banana.json",
+            "active_template": null,
+            "subject": { "common_name": "Stinging nettle", "botanical_name": "Urtica dioica" }
+          },
+          "pipeline": { "orchestrator": null, "config_ref": "data/config/pipeline.json" }
+        }
+      }
+    },
+    {
+      "id": "22222222-2222-4222-8222-222222222222",
+      "slug": "solanum-lycopersicum",
+      "genus": "Solanum",
+      "species": "lycopersicum",
+      "infraspecific_rank": null,
+      "infraspecific_epithet": null,
+      "cultivar": "Seedlantern",
+      "authority": "L.",
+      "family": "Solanaceae",
+      "alternative_names": ["Tomato", "Seedlantern tomato"],
+      "origin": "Western South America",
+      "habitat": "Warm season. Grown as an annual where frost comes.",
+      "hardiness_zone": "10-11",
+      "hardiness_rhs": "H1C",
+      "metadata": {
+        "avatars": {
+          "casual_observer": {
+            "care": "Heat on the wall. Water the root, not the leaf. Let the fruit ripen on the plant if you can wait.",
+            "visual_traits": "A soft vine, divided leaves, and fruit that turns from green to red.",
+            "pet_toxicity": "The leaves and green fruit are not for pets. The ripe fruit is the part people eat.",
+            "trivia": "Seedlantern is a name made for this seed. It is not a cultivar you can buy."
+          },
+          "production_grower": {
+            "ec": "2.0 to 3.5 mS/cm once the fruit is setting. Lower while the plant is young.",
+            "ph": "5.8 to 6.3",
+            "dli": "20 to 30 mol per square metre per day under cover.",
+            "propagation": "Seed in warmth. Pot on when the first true leaves are firm.",
+            "harvest": "Pick when the fruit is coloured and gives slightly. Do not refrigerate it."
+          },
+          "ecological_manager": {
+            "habitat_restoration": "Not a restoration plant. In a garden it needs a bed of its own, or it smothers neighbours.",
+            "pollinators": "Flowers are mostly self-pollinated. A breeze or a bee still helps the fruit set.",
+            "biodiversity_score": 28
+          }
+        },
+        "pod": {
+          "positioning": "kitchen wall canvas",
+          "dimensions_mm": { "1:1": [300, 300], "3:4": [300, 400] },
+          "print_ready": true
+        },
+        "agent_instructions": {
+          "media_generation": {
+            "target_engine": "nano_banana",
+            "recipe_ref": "data/config/nano-banana.json",
+            "active_template": null,
+            "subject": { "common_name": "Tomato", "botanical_name": "Solanum lycopersicum 'Seedlantern'" }
+          },
+          "pipeline": { "orchestrator": null, "config_ref": "data/config/pipeline.json" }
+        }
+      }
+    },
+    {
+      "id": "33333333-3333-4333-8333-333333333333",
+      "slug": "aloe-vera",
+      "genus": "Aloe",
+      "species": "vera",
+      "infraspecific_rank": null,
+      "infraspecific_epithet": null,
+      "cultivar": null,
+      "authority": "(L.) Burm.f.",
+      "family": "Asphodelaceae",
+      "alternative_names": ["Aloe", "True aloe"],
+      "origin": "Arabian Peninsula",
+      "habitat": "Arid, rocky ground that drains",
+      "hardiness_zone": "9-11",
+      "hardiness_rhs": "H2",
+      "metadata": {
+        "avatars": {
+          "casual_observer": {
+            "care": "Let the pot dry. A wet crown rots. Bright light, not a scorching pane all afternoon.",
+            "visual_traits": "Thick leaves in a rosette, pale spots when young, a gel inside the leaf.",
+            "pet_toxicity": "The sap can irritate. Keep it off skin and away from pets who chew.",
+            "trivia": "The gel is useful on a scrape. The plant is not a pharmacy."
+          },
+          "production_grower": {
+            "ec": "0.8 to 1.5 mS/cm. It stores water in the leaf, so a strong feed is wasted.",
+            "ph": "6.0 to 7.0",
+            "dli": "10 to 18 mol per square metre per day. Shade cloth in high summer.",
+            "propagation": "A pup with its own roots, lifted and set in a dry mix.",
+            "harvest": "Cut a lower leaf at the base. Leave the heart. Do not strip the plant."
+          },
+          "ecological_manager": {
+            "habitat_restoration": "Keep it in the pot or the dry bed. In a wet climate it does not belong in wild ground.",
+            "pollinators": "A tall flower spike, when it comes, feeds sunbirds and insects in its home range.",
+            "biodiversity_score": 36
+          }
+        },
+        "pod": {
+          "positioning": "kitchen wall canvas",
+          "dimensions_mm": { "1:1": [300, 300], "3:4": [300, 400] },
+          "print_ready": true
+        },
+        "agent_instructions": {
+          "media_generation": {
+            "target_engine": "nano_banana",
+            "recipe_ref": "data/config/nano-banana.json",
+            "active_template": null,
+            "subject": { "common_name": "Aloe", "botanical_name": "Aloe vera" }
+          },
+          "pipeline": { "orchestrator": null, "config_ref": "data/config/pipeline.json" }
+        }
+      }
+    }
+  ]
+}

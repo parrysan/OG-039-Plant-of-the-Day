@@ -1,0 +1,35 @@
+/* The lockup is one image. Height is the only size control, and the ratio stays put. */
+@layer ods.primitives {
+  .ods-logo {
+    display: block;
+    inline-size: auto;
+    block-size: var(--spacing-8);
+    max-inline-size: none;
+    object-fit: contain;
+    aspect-ratio: 1251 / 291;
+  }
+  .ods-logo[data-variant="leaf"] { aspect-ratio: 1; }
+  .ods-logo[data-height="24"] { block-size: var(--spacing-6); }
+  .ods-logo[data-height="32"] { block-size: var(--spacing-8); }
+  .ods-logo[data-height="40"] { block-size: var(--spacing-10); }
+  /* 56px at the default 16px root: 2rem + 1.5rem. No new size token. */
+  .ods-logo[data-height="56"] { block-size: calc(var(--spacing-8) + var(--spacing-6)); }
+
+  .ods-logo-demo {
+    display: grid;
+    justify-items: start;
+    gap: var(--spacing-6);
+    margin: var(--spacing-0);
+  }
+  .ods-logo-demo p { margin: var(--spacing-0); text-align: left; }
+  .ods-logo-row { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: flex-start; gap: var(--spacing-6); }
+  .ods-logo-ground[data-ground="dark"] {
+    background: var(--color-green-darkest);
+    padding: var(--spacing-4);
+  }
+  /* Clear space is half the logo height. At 32px that is spacing-4. */
+  .ods-logo-clear {
+    padding: var(--spacing-4);
+    border: var(--border-width) solid var(--color-border);
+  }
+}

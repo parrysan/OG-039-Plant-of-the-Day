@@ -1,0 +1,6 @@
+ODS snapshot for OG-039.
+Tokens, primitives, accordion, key-value list, status pill, alert, icon, button, site header, close button: main of parrysan/OS-000-Design-System, 24 Nov 2026.
+Brand leaf, favicon.svg, oganiko-lockup.svg, and oganiko-lockup-reversed.svg: copied from cursor/logo-library-b54f (not merged). Byte-identical to that branch. Git blob sha1: leaf 1e35b8cc36a96355f4ac1615f14699e23912aaf5, lockup 02d554b42f4c503aee827f048398316043c486a0, reversed 16a88c24f667b7fe3dd7071dda407268a882f426. Copies also live in public/brand.
+Favicon rasters (ico, 32px png, apple touch) were rendered from that leaf SVG. A second try through the GitHub contents API still returned those binaries as lossy text (the PNG signature 0x89 becomes a replacement character), so the upstream bytes were not saved.
+Adaptations: Next public URLs for the logo; CSS imported once from src/app/globals.css; alert action links use target="_blank" rel="noopener"; button.css omits the unused social-network colour block.
+Do not edit ods/tokens/oganiko.css by hand.

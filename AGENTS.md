@@ -58,7 +58,7 @@ created: "2026-08-12"
 
 - **Production URL**: none — no cloud host. Local only until a Firebase slot is free
 - **Local client area**: http://localhost:8080 (from `docs/client-area/`)
-- **Local app**: http://localhost:8081/prototype/daily-page/ (serve from repo root)
+- **Local app**: http://localhost:3000 (`npm run dev`). The older prototype remains http://localhost:8081/prototype/daily-page/ (serve from repo root)
 - **Staging / preview URL**: none
 - **Platform handle / project ID**: none — do **not** create a Firebase project (no slot available)
 - **Other identifiers**: none yet
@@ -118,4 +118,4 @@ Single-context: `CONTEXT.md` at the repo root. See `docs/agents/domain.md`.
 
 > **Optional, ephemeral.** A 2–3 line free-form scratch pad of "where I left off" — not durable knowledge. Durable decisions belong in the vault project page. Wipe and rewrite freely.
 
-Workspace from Greg Isenberg video is live. Next: one small visible improvement on the daily page (plan first), then preview at :8081.
+Next.js plant record is in `src/` (`npm run dev`, port 3000). Supabase SQL is local-only. The static prototype is still at :8081.
